@@ -399,3 +399,80 @@ def highest_even(li):
 
 print(highest_even([10,2,3,4,8,11])) # => 10
 ```
+
+## Scope
+
+```Python
+# Scope - What variables do I have access to?
+
+def some_func:
+    total = 100
+
+print(total) # => NameError: name 'total' is not defined
+
+if True:
+    x = 10
+
+print(x) # => 10
+
+# Scope rules
+# 1 - start with local
+# 2 - Parent local?
+# 3 - Global
+# 4 - built in python functions
+
+a = 1
+
+def confusion():
+    a = 5
+    return a
+
+print(a) # => 1
+print(parent()) # => 5
+
+
+def parent():
+    def confusion():
+        return a, sum
+    return confusion()
+
+print(a) # => 1
+print(parent()) # => <built-in function sum>
+
+# global Keyword
+
+total = 0
+
+def count():
+    total += 1
+    return total
+
+print(count()) # => UnboundLocalError: local variable 'total' referenced before assignment
+
+def count():
+    global total
+    total += 1
+    return total
+
+print(count()) # => 1
+
+
+def count(total):
+    total += 1
+    return total
+
+print(count(count(count(total)))) # => 3
+
+# nonlocal Keyword
+
+def outer():
+    x = 'local'
+    def inner():
+        nonlocal x
+        x = 'nonlocal'
+        print('inner:', x) # x = 'nonlocal
+    inner()
+    print('outer:', x) # x = 'nonlocal
+    
+outer()
+```
