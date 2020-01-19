@@ -384,5 +384,18 @@ def super_func(name, *args, i='hi', **kwargs):
 print(super_func('Andy', 1,2,3,4,5, num1=5, num2=10)) # => 30
 
 # Rule: params, *args, default parameters, **kwargs
+```
 
+## Functions Exercise
+
+```Python
+def highest_even(li):
+  highest = 0
+  for num in li:
+    if num % 2 == 0:
+      if num > highest:
+        highest = num
+  return highest
+
+print(highest_even([10,2,3,4,8,11])) # => 10
 ```
