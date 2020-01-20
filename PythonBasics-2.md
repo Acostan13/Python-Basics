@@ -328,3 +328,61 @@ checkDriverAge(14) # => Sorry, you are too young to drive this car. Powering off
 checkDriverAge(18) # => Congratulations on your first year of driving. Enjoy the ride!
 checkDriverAge(70) # => Powering On. Enjoy the ride!
 ```
+
+## Docstrings
+
+```Python
+def test(a):
+    '''
+    Info: this function tests and prints param a
+    '''
+    print(a)
+
+test('!!!')
+help(test()) # => test(a) Info: this function tests and prints param a (END)
+
+print(test.__doc__) # => Info: this function tests and prints param a
+```
+
+## Clean Code
+
+```Python
+def is_even(num):
+    if num % 2 == 0:
+        return True
+    return False
+
+print(is_even(50)) # => True
+print(is_even(51)) # => False
+```
+
+## *args & **kwargs
+
+```Python
+# *args
+def super_func(args):
+    return sum(args)
+
+super_func(1,2,3,4,5) # => super_func() takes 1 positional argument but 5 were given
+
+def super_func(*args, **kwargs):
+    print(args) # => 1 2 3 4 5 
+    print(*args) # => (1,2,3,4,5)
+    return sum(args)
+
+print(super_func(1,2,3,4,5)) # => 15
+
+# **kwargs
+
+def super_func(name, *args, i='hi', **kwargs):
+    total = 0
+    print(**kwargs) # => {'num1': 5, 'num2': 10}
+    for items in kwargs.values():
+        total += items
+    return sum(args) + total
+
+print(super_func('Andy', 1,2,3,4,5, num1=5, num2=10)) # => 30
+
+# Rule: params, *args, default parameters, **kwargs
+
+```
