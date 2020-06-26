@@ -184,6 +184,8 @@ else:
 my_list = [1,2,3]
 for item in [1,2,3]:
     print(item)
+    continue # brings you back top of the loop aka line 185
+    print(item) # does not execute
 
 # While loops have more flexibility
 i = 0
@@ -200,8 +202,6 @@ while True:
     if (response == 'bye'):
         break
 
-
-
 ```
 
 ## Exercise: Tricky Counter
@@ -214,4 +214,27 @@ counter = 0
 for item in my_list:
     counter += item
 print(counter)
+```
+
+## Exercise: Creating a GUI
+
+```Python
+#Display the image below where the 0 is going to be ' ', and the 1 is going to be '*'. This will reveal an image!
+picture = [
+  [0,0,0,1,0,0,0],
+  [0,0,1,1,1,0,0],
+  [0,1,1,1,1,1,0],
+  [1,1,1,1,1,1,1],
+  [0,0,0,1,0,0,0],
+  [0,0,0,1,0,0,0]
+]
+
+for row in picture:
+    for col in row:
+      if col == 0:
+        print(' ', end=' ')
+      else:
+        print('*', end =' ')
+    print()
+
 ```
