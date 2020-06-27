@@ -153,6 +153,54 @@ for number in range(10,0,-2):
 for number in range(2):
     print(list(range(10))) # prints two arrays with values 0-9
     
+# enumerate()
+for i,char in enumerate('hello'):
+    print(i, char) # prints every letter in string, as well as the index of each letter
+
+for i,char in enumerate(list(range(100))):
+  if(char == 50):
+    print(f'The index of 50 is {i}')
+
+# While Loops
+
+i = 0
+while i < 50:
+    print(i) # prints infinetly
+
+while i < 50:
+    print(i)
+    break # breaks the loop after 1 iteration
+
+while i < 50:
+    print(i)
+    i += 1 # prints 0 - 49
+    break
+else:
+    print('done with all the work')
+
+# For vs While Loops
+
+# For loops are simpler
+my_list = [1,2,3]
+for item in [1,2,3]:
+    print(item)
+
+# While loops have more flexibility
+i = 0
+while i < len([1,2,3]):
+    print(my_list[i])
+    i += 1
+
+while True:
+    print('something gets printed while the above condition is true')
+    break
+
+while True:
+    response = input('say something: ')
+    if (response == 'bye'):
+        break
+
+
 
 ```
 
