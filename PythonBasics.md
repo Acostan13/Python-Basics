@@ -222,6 +222,90 @@ matrix = [
 ]
 
 print([0][1]) # => 2
+
+# List Methods
+# all of these methods modify lists, as opposed to copying them
+basket = [1,2,3,4,5]
+print(len(basket)) # => 5
+
+# Appending
+new_list = basket.append(100)
+print(basket) # => [1,2,3,4,5,100]
+print(new_list) # => None
+
+# Inserting
+bucket = [6,7,8,9,10]
+bucket.insert(4,100)
+new_bucket = bucket
+print(bucket) # => [6,7,8,9,100,10]
+print(new_bucket) # => [6,7,8,9,100,10]
+
+# Extending
+bucket = [6,7,8,9,10]
+new_bucket = bucket.extend([100, 101])
+print(bucket) # => [6,7,8,9,10, 100, 101]
+print(new_bucket) # => None
+
+
+# Removing
+bucket = [6,7,8,9,10]
+bucket.pop()
+print(bucket) # => [6,7,8,9]
+bucket.pop(0) # => [7,8,9]
+basket.remove(8) # => [7,9]
+
+bucket = [1,2,3,4,5]
+new_bucket = bucket.pop(2)
+print(new_bucket) # => 3
+
+bucket = [1,2,3,4,5]
+new_bucket = bucket.clear()
+print(new_bucket) # => None
+print(bucket) # => []
+
+# Indexing
+bucket = ['a','b','c','d',5]
+print(bucket.index('c')) # => 2
+print(bucket.index('d'), 0, 2) # => ValueError: 'd' is not in list
+print('d' in bucket) # => True
+print('x' in bucket) # => False
+print('i' in 'hi my name is alex') # => True
+print(bucket.count('d')) # => 1
+
+# Sorting
+bucket = ['a','x','b','c','d','e','d']
+bucket.sort() # modifies list
+print(bucket) # => ['a','b','c','d','d','e','x']
+
+sortedBucket = sorted(bucket) # => creates a sorted copy of list
+print(sortedBucket) # => ['a','b','c','d','d','e','x']
+
+reversedBucket = sortedBucket.reverse() # => reverses the basket in place
+print(reversedBucket) # => ['x','e','d','d','c','b','a']
+
+# Copying Lists
+bucket = ['a','x','b','c','d','e','d']
+bucket.copy() # => creates a copy of bucket
+
+# List Patterns
+print(list(range(1,100))) # => Creates a list with numbers 1 - 99
+print(list(range(101))) # => Creates a list with numbers 0 - 100
+
+sentence = ' '.join(['hi','my','name','is','james'])
+print(sentence) # => 'hi my name is james'
+
+# List Unpacking
+a,b,c, *other, d = [1,2,3,4,5,6,7,8,9]
+print(a) # => 1
+print(b) # => 2
+print(c) # => 3
+print(other) # => [4,5,6,7,8]
+print(d) # => 9
+
+# None
+weapons = None
+print(weapons) # => None
+
 ```
 
 # Tuples
