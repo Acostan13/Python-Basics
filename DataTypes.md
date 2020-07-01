@@ -23,6 +23,26 @@ print(round(3.9)) # => 4
 ## Return the absolute value of the argument.
 print(abs(-20)) # => 20
 
+# Operator Precedence
+
+print((20-3) + 2 ** 2) # => 21
+
+# PEMDAS
+# ()
+# **
+# * /
+# + -
+
+print((5 + 4) * 10 / 2) # => 45.0
+
+print(((5 + 4) * 10) / 2) # => 45.0
+
+print((5 + 4) * (10 / 2)) # => 45.0
+
+print(5 + (4 * 10) / 2) # => 25.0
+
+print(5 + 4 * 10 // 2) # => 25
+
 # bool
 # str
 # list
