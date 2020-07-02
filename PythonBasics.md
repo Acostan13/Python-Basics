@@ -161,7 +161,7 @@ print(bool(0)) # => False
 print(bool('True')) # => True
 ```
 
-### Type Conversion Exercise
+### Exercise: Type Conversion
 ```Python
 name = 'John Smith '
 age = 50
@@ -173,7 +173,56 @@ birth_year = input('What year were you born?')
 print(f"Your age is {2020 - int(birth_year)}")
 ```
 
+### Exercise: Password Checker
+```Python
+username = input('Please enter your username:')
+password = input('Please enter your password:')
+
+pw_length = len(password)
+hidden_pw = '*' * pw_length
+
+print(f"{username}, your password, {hidden_pw}, is {pw_length} letters long")
+```
+
 # Lists
+```Python
+# Data Structure
+li = [1,2,3,4,5]
+li2 = ['a', 'b', 'c']
+li2 = [1, 2, 'a', 'b', True]
+print(li2[3]) # => b
+
+# List Slicing
+print(li2[0:2]) # => [1, 2]
+print(li2[0::2]) # => [1, 'a', True]
+
+# Lists are Mutable
+li2[0] = 'hello'
+print(li2) # => ['hello', 2, 'a', 'b', True]
+print(li2[1:3]) # => [2, 'a']
+
+# Modifying vs Copying Lists
+li2[0] = 'hi'
+new_list = li2 # modifying
+new_list[0] = 'there'
+print(li2) # => ['there', 2, 'a', 'b', True]
+print(new_list) # => ['there', 2, 'a', 'b', True]
+
+li2[0] = 'hi'
+new_list = li2[:] # copying
+new_list[0] = 'there'
+print(li2) # => ['hi', 2, 'a', 'b', True]
+print(new_list) # => ['there', 2, 'a', 'b', True]
+
+# Matrix - 2D (or multi-dimensional) Lists
+matrix = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+
+print([0][1]) # => 2
+```
 
 # Tuples
 
