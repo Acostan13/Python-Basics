@@ -81,7 +81,7 @@ print(b) # => 2
 print(c) # => 3
 ```
 
-# Strings
+## Strings
 
 ```Python
 #Declaring Strings
@@ -136,21 +136,50 @@ selfish[0] = '8'
 print(selfish) # => TypeError: 'str' object does not support item assignment
 selfish += '8'
 print(selfish) # => 12345678
+ 
+#Built-In Functions + Methods
+greet = 'hello'
+print(len(greet)) # => 5
+print(len(greet[0:len(greet)])) # => 5
+print(len(greet[0:5])) # => 5
 
-
+quote = 'to be or not to be'
+print(quote.upper()) # => TO BE OR NOT TO BE
+print(quote.capitalize()) # => To be or not to be
+print(quote.find('be')) # => 3
+print(quote.replace('be', 'me')) # => to me or not to me
 ```
 
+# Booleans
+```Python
+name = 'Alex'
+is_cool = False
+is_cool = True
 
+print(bool(1)) # => True
+print(bool(0)) # => False
+print(bool('True')) # => True
+```
 
-# bool
+### Type Conversion Exercise
+```Python
+name = 'John Smith '
+age = 50
+relationship_status = 'single'
+relationship_status = "It's complicated"
 
-# list
+# Take birth year input from your user, and print their age
+birth_year = input('What year were you born?')
+print(f"Your age is {2020 - int(birth_year)}")
+```
 
-# tuple
+# Lists
 
-# set
+# Tuples
 
-# dict
+# Sets
+
+# Dicts
 
 # Classes -> custom types
 
