@@ -35,7 +35,9 @@ print(int('0b101', 2)) # => 5
 ```
 
 ## Operator Precedence
+
 ### PEMDAS: Parenthesis, Exponents, Multiplication & Division, Addition & Subtraction
+
 ```Python
 # PEMDAS
 # ()
@@ -57,6 +59,7 @@ print(5 + 4 * 10 // 2) # => 25
 ```
 
 ## Variables
+
 - snake_case
 - Start with lowercase or underscore
 - Letters, numbers, underscores
@@ -78,14 +81,79 @@ print(b) # => 2
 print(c) # => 3
 ```
 
+# Strings
+
+```Python
+#Declaring Strings
+username = 'supercoder'
+passowrd = 'superrsecret'
+long_string = '''
+WOW
+O O
+---
+'''
+
+#String Concatenation
+print('hello' + ' Alex') # => hello Alex
+print('hello' + 5) # => TypeError: Can't add an int to a string
+print(str(100)) # => 100
+
+#Type Conversion
+print(type(str(100))) # => <class 'str'>
+
+#Escape Sequence
+weather = "/t It\'s \"kind of\" sunny outside /n hope you have a good day!"
+print(weather)  #    It's "kind of" sunny outside
+                # hope you have a good day!
+
+#Formatted Strings
+name = 'Johnny'
+age = 55
+
+print(f'hi {name}. You are {age} years old') # => hi Johnny. You are 55 years old
+
+#String Indexes
+selfish = 'me me me'
+         # 01234567
+
+# [start:stop:stepover]        
+print(selfish[0]) # => m
+print(selfish[7]) # => e
+print(selfish[0:2]) # => me
+print(selfish[0:8]) # => me me me
+print(selfish[0:8:2]) # => m e m
+print(selfish[1:]) # => me me me
+print(selfish[:5]) # => me me
+print(selfish[::1]) # => me me me
+print(selfish[::-1]) # => em em em
+print(selfish[::-2]) # => m m e
+print(selfish[-1]) # => e
+print(selfish[-4]) # => m
+
+#Immutability - cannot change the value of a data type once it is created
+# However, you can reassign variables to new values
+selfish[0] = '8'
+print(selfish) # => TypeError: 'str' object does not support item assignment
+selfish += '8'
+print(selfish) # => 12345678
+
+
+```
+
+
+
 # bool
-# str
+
 # list
+
 # tuple
+
 # set
+
 # dict
 
 # Classes -> custom types
 
 # Specialized Data Types
+
 None
