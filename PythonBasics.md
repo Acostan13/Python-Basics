@@ -116,7 +116,7 @@ print(f'hi {name}. You are {age} years old') # => hi Johnny. You are 55 years ol
 selfish = 'me me me'
          # 01234567
 
-# [start:stop:stepover]        
+# [start:stop:stepover]
 print(selfish[0]) # => m
 print(selfish[7]) # => e
 print(selfish[0:2]) # => me
@@ -136,7 +136,7 @@ selfish[0] = '8'
 print(selfish) # => TypeError: 'str' object does not support item assignment
 selfish += '8'
 print(selfish) # => 12345678
- 
+
 #Built-In Functions + Methods
 greet = 'hello'
 print(len(greet)) # => 5
@@ -151,6 +151,7 @@ print(quote.replace('be', 'me')) # => to me or not to me
 ```
 
 # Booleans
+
 ```Python
 name = 'Alex'
 is_cool = False
@@ -162,6 +163,7 @@ print(bool('True')) # => True
 ```
 
 ### Exercise: Type Conversion
+
 ```Python
 name = 'John Smith '
 age = 50
@@ -174,6 +176,7 @@ print(f"Your age is {2020 - int(birth_year)}")
 ```
 
 ### Exercise: Password Checker
+
 ```Python
 username = input('Please enter your username:')
 password = input('Please enter your password:')
@@ -185,6 +188,7 @@ print(f"{username}, your password, {hidden_pw}, is {pw_length} letters long")
 ```
 
 # Lists
+
 ```Python
 # Data Structure
 li = [1,2,3,4,5]
@@ -308,11 +312,79 @@ print(weapons) # => None
 
 ```
 
+# Dictionaries - Unordered key value pairs
+
+```Python
+dictionary = {
+    'a': [1,2,3],
+    'b': 'hello',
+    'c': True
+}
+
+print(dictionary['b']) # => hello
+print(dictionary['a'][1]) # => 2
+
+my_list = [
+    {
+        'a': [1,2,3],
+        'b': 'hello',
+        'x': True
+    },
+    {
+        'a': [4,5,6],
+        'b': 'hello',
+        'x': True
+    }
+]
+
+print(my_list[0]['a'][2]) # => 3
+
+# Dictionary Methods
+
+user = {
+    'bucket': [1,2,3],
+    'greet': 'hello'
+}
+
+# Get
+print(user.get('age')) # => None
+print(user.get('age'), 55) # => 55
+
+user2 = dict(name='John')
+print(user2) # => {'name': 'John'}
+
+# keys() & values()
+print('bucket' in user) # => True
+print('size' in user) # => False
+print('hello' in user.keys()) # => False
+print('hello' in user.values()) # => True
+
+# items()
+print(user.items()) # => dict_items([('bucket, [1,2,3]),('greet', 'hello')])
+
+# clear()
+print(user.clear()) # => {}
+
+# copy()
+user2 = user.copy()
+print(user) # => {'bucket', [1,2,4], 'greet': 'hello'}
+print(user2) # => {'bucket', [1,2,4], 'greet': 'hello'}
+
+# pop() & popitem()
+print(user.pop('greet')) # => 'hello'
+print(user) # => {'bucket', [1,2,4]}
+print(popitem()) # => ('bucket', [1,2,4])
+print(user) # => {}
+
+# update()
+print(user.update({'greet': 'hi'})) # => None
+print(user) # => {'greet': 'hi'}
+
+```
+
 # Tuples
 
 # Sets
-
-# Dicts
 
 # Classes -> custom types
 
