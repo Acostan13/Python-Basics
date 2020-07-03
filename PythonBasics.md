@@ -424,6 +424,65 @@ print(len(my_tuple)) # => 6
 ```
 
 # Sets
+```Python
+# Sets - Unordered collections of unique objects
+
+my_set = {1,2,3,4,5,5}
+print(my_set) # => {1,2,3,4,5}
+print(my_set[0]) # => TypeError: 'set' object does not support indexing
+print(1 in my_set) # => True
+
+# add(), copy() & clear()
+my_set.add(100)
+my_set.add(2)
+print(my_set) # => {1,2,3,4,5,100}
+print(len(my_set)) # => 6
+
+new_set = my_set.copy()
+my_set.clear()
+print(new_set) # => {1,2,3,4,5}
+print(my_set) # => set()
+
+# set() & list()
+my_list = [1,2,3,4,5,5]
+print(set(my_list)) # => {1,2,3,4,5}
+print(list(my_list)) # => [1,2,3,4,5]
+
+# difference() & discard()
+my_set = {1,2,3,4,5}
+your_set = {4,5,6,7,8,9,10}
+
+print(my_set.difference(your_set)) # => {1,2,3}, difference() simply tells you the difference between two sets
+print(my_set.discard(5)) # => None
+print(my_set) # => {1,2,3,4}
+
+# difference_update() - Removes all elements of another set from this set
+my_set = {1,2,3,4,5}
+your_set = {4,5,6,7,8,9,10}
+
+print(my_set.difference_update(your_set)) # => None, {4,5} are removed
+print(my_set) # => {1,2,3}
+
+# intersection() - Shows commonalities between two sets
+my_set = {4,5}
+your_set = {4,5,6,7,8,9,10}
+
+print(my_set.intersection(your_set)) # => {4,5}
+print(my_set & your_set) # => {4,5}, shorthand form
+
+# isdisjoint() - Returns true if two sets have a null intersection
+print(my_set.isdisjoint(your_set)) # => False
+
+# union() - Returns a new set of concatenated sets without duplicates
+print(my_set.union(your_set)) # => {1,2,3,4,5,6,7,8,9,10}
+print(my_set | your_set) # => {1,2,3,4,5,6,7,8,9,10} shorthand form
+
+# issubset() - Reports whether another set contains this set
+print(my_set.issubset(your_set)) # => True
+
+# issuperset() - Reports whether this set contains another set
+print(your_set.issuperset(my_set)) # => True
+```
 
 # Classes -> custom types
 
