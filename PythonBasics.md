@@ -379,10 +379,49 @@ print(user) # => {}
 # update()
 print(user.update({'greet': 'hi'})) # => None
 print(user) # => {'greet': 'hi'}
-
 ```
 
 # Tuples
+
+```Python
+# Tuple - Like lists but they're immutable
+my_tuple = (1,2,3,4,5)
+my_tuple[1] = 'z' # => TypeError: 'tuple' object does not support item assignment
+print(my_tuble[1]) # => 2
+print(5 in my_tuble) # => True
+
+# You can use Tuples within Dictionaries
+user = {
+    (1,2): [1,2,3],
+    'greet': 'hello',
+    'age': 20
+}
+
+print(user[(1,2)]) # => [1,2,3]
+
+new_tuple = my_tuple[1:2]
+print(new_tuple) # => (2,)
+
+new_tuple2 = my_tuple[1:4]
+print(new_tuple2) # => (2,3,4)
+
+x,y,z, *other = (1,2,3,4,5)
+print(x) # => 1
+print(z) # => 2
+print(y) # => 3
+print(other) # => [4,5]
+
+# Tuple Methods
+
+# count() & index()
+my_tuple = (1,2,3,4,5,5)
+print(my_tuple.count(5)) # => 2
+print(my_tuple.index(5)) # => 4
+
+# len()
+print(len(my_tuple)) # => 6
+
+```
 
 # Sets
 
