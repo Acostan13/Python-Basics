@@ -134,4 +134,36 @@ for key, value in user.items():
 
 for item in 50:
     print(item) # TypeError: 'int' object is not iterable
+
+# range()
+print(range(100)) # range(0,100)
+
+for number in range(0,10):
+    print(number) # prints 0 - 9
+
+for number in range(0,10,2):
+    print(number) # prints 0,2,4,6,8
+
+for number in range(0,10,-1):
+    print(number) # prints nothing
+
+for number in range(10,0,-2):
+    print(number) # prints 10,8,6,4,2
+
+for number in range(2):
+    print(list(range(10))) # prints two arrays with values 0-9
+    
+
+```
+
+## Exercise: Tricky Counter
+```Python
+# Find the sum of values in a list
+
+my_list = [1,2,3,4,5,6,7,8,9,10]
+counter = 0
+
+for item in my_list:
+    counter += item
+print(counter)
 ```
