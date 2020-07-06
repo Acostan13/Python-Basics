@@ -231,10 +231,24 @@ picture = [
 
 for row in picture:
     for col in row:
-      if col == 0:
-        print(' ', end=' ')
+      if col:
+        print('*', end=' ')
       else:
-        print('*', end =' ')
+        print(' ', end =' ')
     print()
+```
 
+## Exercise: Find Duplicates
+
+```Python
+# Check for duplicates in list:
+duplicate_list = ['a','b','c','b','d','m','n','n']
+
+duplicates = []
+
+for letter in duplicate_list:
+  if duplicate_list.count(letter) > 1:
+    if letter not in duplicates:
+      duplicates.append(letter)
+print(duplicates)
 ```
