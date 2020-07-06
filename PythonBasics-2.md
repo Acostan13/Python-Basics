@@ -252,3 +252,34 @@ for letter in duplicate_list:
       duplicates.append(letter)
 print(duplicates)
 ```
+
+## Functions
+
+```Python
+# defining a function with parameters
+def say_hello(name, emoji):
+    print(f'hello {name} {emoji}')
+
+# calling the function with arguments
+say_hello('Alex', ':)')
+say_hello('Jim', ':)')
+say_hello('Brandon', ':)')
+
+# keyword arguments, bad practice as it is not very readable!
+say_hello(emoji=':)', name='Bibi') # => hello Bibi :)
+
+# defining a function with default parameters
+def say_hello(name='Darth Vader', emoji= 'XD'):
+    print(f'hello {name} {emoji}')
+
+say_hello() # => hello Darth Vader XD
+
+# return statement
+def sum(num1, num2):
+    def another_func(n1,n2):
+        return n1 + n2
+    return another_func(num1,num2)
+
+total = sum(10,5)
+print(total) # => 15
+```

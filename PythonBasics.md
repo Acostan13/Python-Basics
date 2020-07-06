@@ -483,9 +483,3 @@ print(my_set.issubset(your_set)) # => True
 # issuperset() - Reports whether this set contains another set
 print(your_set.issuperset(my_set)) # => True
 ```
-
-# Classes -> custom types
-
-# Specialized Data Types
-
-None
