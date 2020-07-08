@@ -76,3 +76,27 @@ def oldest_cat(*kitty):
 print(f'the oldest cat is {oldest_cat(purr.age, meow.age, rawr.age)} years old.')
 ```
 
+
+## Encapsulation
+
+```Python
+class PlayerCharacter:
+    def __init__(self, name='anonymous', age=0):
+        if age > 18:
+            self.name = name  # attributes
+            self.age = age
+
+    def run(self):
+        print('run')
+    
+    def speak(self):
+        print(f'my name is {self.name}, and I am {self.age} years old')
+    
+player1 = PlayerCharacter('Alex', 28)
+player1.speak()  # => my name is Alex, and I am 28 years old
+print(player1.name)  # =>  Alex
+print(player1.age)  # =>  28
+
+player2 = {'name': 'Jay', 'age': 24}
+print(player2['name'])  # =>  Jay
+print(player2['age'])  # =>  24
