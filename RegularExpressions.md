@@ -55,7 +55,7 @@ print(b.group())  # => Hey
 ```Python
 import re
 
-passwordVerifier = re.compile(r"([a-zA-Z0-9@#$%]{8,}\d)")
+passwordVerifier = re.compile(r"([a-zA-Z0-9#@%$]{7,}[0-9])")
 
 test_str1 = "DeAeG%"
 test_str2 = "DeAeGae#"
