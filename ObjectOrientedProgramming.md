@@ -53,7 +53,6 @@ meow = Cat(name='meow', age=5)
 rawr = Cat(name='rawr', age=1)
 
 # 2 Create a function that finds the oldest cat
-kitty = 0
 
 
 def oldest_cat(*kitty):
