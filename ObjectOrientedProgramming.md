@@ -83,7 +83,7 @@ print(f'the oldest cat is {oldest_cat(purr.age, meow.age, rawr.age)} years old.'
 class PlayerCharacter:
     def __init__(self, name='anonymous', age=0):
         if age > 18:
-            self.name = name  # attributes
+            self.name = name
             self.age = age
 
     def run(self):
@@ -100,3 +100,20 @@ print(player1.age)  # =>  28
 player2 = {'name': 'Jay', 'age': 24}
 print(player2['name'])  # =>  Jay
 print(player2['age'])  # =>  24
+```
+
+## Abstraction
+
+```Python
+class PlayerCharacter:
+    def __init__(self, name, age):
+        if age > 18:
+            self._name = name  # private attributes
+            self._age = age  # the underscore signifies privacy, a practice implented to notify coders NOT to reassign value
+
+    def run(self):
+        print('run')
+    
+    def speak(self):
+        print(f'my name is {self._name}, and I am {self._age} years old')
+```
