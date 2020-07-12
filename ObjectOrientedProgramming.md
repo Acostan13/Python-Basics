@@ -124,6 +124,9 @@ class PlayerCharacter:
 class User:
     def sign_in(self):
         print('logged in')
+    
+    def attack(self):
+        print('do nothing')
 
 class Wizard(User):  # Inheriting User Class, subclass
     def __init__(self, name, power):
@@ -131,6 +134,7 @@ class Wizard(User):  # Inheriting User Class, subclass
         self.power = power
 
     def attack(self):
+        User.attack(self)
         print(f'attacking with power of {self.power}')
 
 class Archer(User):  # subclass
@@ -148,10 +152,64 @@ print(isinstance(wizard1, Wizard))  # => True
 print(isinstance(wizard1, object))  # => True
 print(isinstance(wizard1, User))  # => True because wizard1 is an instance of a subclass of User
 
-
 print(wizard1)  # => Wizard object
 wizard1.sign_in()  # => logged in
 
 wizard1.attack()  # => attacking with power of 50
 archer1.attack()  # => attacking with arrows: arrows left - 100
+
+def player_attack(char):
+    char.attack()
+
+player_attack(wizard1)
+player_attack(archer1)
+
+for char in [wizard1, archer1]:
+    char.attack()
+
+```
+
+## Exercise: Pets Everywhere
+
+```Python
+class Pets():
+    animals = []
+    def __init__(self, animals):
+        self.animals = animals
+
+    def walk(self):
+        for animal in self.animals:
+            print(animal.walk())
+
+class Cat():
+    is_lazy = True
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def walk(self):
+        return f'{self.name} is just walking around'
+
+class Simon(Cat):
+    def sing(self, sounds):
+        return f'{sounds}'
+
+class Sally(Cat):
+    def sing(self, sounds):
+        return f'{sounds}'
+
+#1 Add nother Cat
+class Tiger(Cat):
+    def sing(self, sounds):
+        return f'{sounds}'
+
+#2 Create a list of all of the pets (create 3 cat instances from the above)
+my_cats = [Simon('James', 3), Sally('Joe', 4), Tiger('Josephine', 5)]
+
+#3 Instantiate the Pet class with all your cats use variable my_pets
+my_pets = Pets(my_cats)
+
+#4 Output all of the cats walking using the my_pets instance
+my_pets.walk()
 ```
