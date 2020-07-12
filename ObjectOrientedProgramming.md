@@ -117,3 +117,41 @@ class PlayerCharacter:
     def speak(self):
         print(f'my name is {self._name}, and I am {self._age} years old')
 ```
+
+## Inheritance
+
+```Python
+class User:
+    def sign_in(self):
+        print('logged in')
+
+class Wizard(User):  # Inheriting User Class, subclass
+    def __init__(self, name, power):
+        self.name = name
+        self.power = power
+
+    def attack(self):
+        print(f'attacking with power of {self.power}')
+
+class Archer(User):  # subclass
+    def __init__(self, name, num_arrows):
+        self.name = name
+        self.num_arrows = num_arrows
+
+    def attack(self):
+        print(f'attacking with arrows: arrows left - {self.num_arrows}')
+
+wizard1 = Wizard('Merlin', 50)
+archer1 = Archer('Robin', 100)
+
+print(isinstance(wizard1, Wizard))  # => True
+print(isinstance(wizard1, object))  # => True
+print(isinstance(wizard1, User))  # => True because wizard1 is an instance of a subclass of User
+
+
+print(wizard1)  # => Wizard object
+wizard1.sign_in()  # => logged in
+
+wizard1.attack()  # => attacking with power of 50
+archer1.attack()  # => attacking with arrows: arrows left - 100
+```
