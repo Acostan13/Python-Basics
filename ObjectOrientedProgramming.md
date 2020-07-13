@@ -270,3 +270,45 @@ super_list1.append(5)
 print(super_list1[0])  # => 5
 print(issubclass(SuperList, list))  # => True
 ```
+
+## Multiple Inheritance
+
+```Python
+class User:
+    def sign_in(self):
+        print('logged in')
+
+
+class Wizard(User):  # Inheriting User Class, subclass
+    def __init__(self, name, power):
+        self.name = name
+        self.power = power
+
+    def attack(self):
+        print(f'attacking with power of {self.power}')
+
+
+class Archer(User):  # subclass
+    def __init__(self, name, num_arrows):
+        self.name = name
+        self.num_arrows = num_arrows
+
+    def check_arrows(self):
+        print(f'{self.num_arrows} remaining')
+
+    def run(self):
+        print('ran really fast')
+
+
+class HybridBorg(Wizard, Archer):
+    def __init__(self, name, power, arrows):
+        Archer.__init__(self, name, arrows)
+        Wizard.__init__(self, name, power)
+
+
+hb1 = HybridBorg('cyborg', 50, 100)
+print(hb1.run())  # => ran really fast
+print(hb1.check_arrows())  # => 100 remaining
+print(hb1.attack())
+print(hb1.sign_in())
+```
