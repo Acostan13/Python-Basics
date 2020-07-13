@@ -76,7 +76,6 @@ def oldest_cat(*kitty):
 print(f'the oldest cat is {oldest_cat(purr.age, meow.age, rawr.age)} years old.')
 ```
 
-
 ## Encapsulation
 
 ```Python
@@ -88,10 +87,10 @@ class PlayerCharacter:
 
     def run(self):
         print('run')
-    
+
     def speak(self):
         print(f'my name is {self.name}, and I am {self.age} years old')
-    
+
 player1 = PlayerCharacter('Alex', 28)
 player1.speak()  # => my name is Alex, and I am 28 years old
 print(player1.name)  # =>  Alex
@@ -113,7 +112,7 @@ class PlayerCharacter:
 
     def run(self):
         print('run')
-    
+
     def speak(self):
         print(f'my name is {self._name}, and I am {self._age} years old')
 ```
@@ -122,14 +121,16 @@ class PlayerCharacter:
 
 ```Python
 class User:
+    def __init__(self, email):
+        self.email = email
+
     def sign_in(self):
         print('logged in')
-    
-    def attack(self):
-        print('do nothing')
+
 
 class Wizard(User):  # Inheriting User Class, subclass
-    def __init__(self, name, power):
+    def __init__(self, name, power, email):
+        super().__init__(email)
         self.name = name
         self.power = power
 
@@ -145,7 +146,7 @@ class Archer(User):  # subclass
     def attack(self):
         print(f'attacking with arrows: arrows left - {self.num_arrows}')
 
-wizard1 = Wizard('Merlin', 50)
+wizard1 = Wizard('Merlin', 50, 'merlin@gmail.com')
 archer1 = Archer('Robin', 100)
 
 print(isinstance(wizard1, Wizard))  # => True
@@ -153,7 +154,9 @@ print(isinstance(wizard1, object))  # => True
 print(isinstance(wizard1, User))  # => True because wizard1 is an instance of a subclass of User
 
 print(wizard1)  # => Wizard object
-wizard1.sign_in()  # => logged in
+print(dir(wizard1))  # Object Introspection - Ability to determine the type of an object at run time
+print(wizard1.email)  # => merlin@gmail.com
+print(wizard1.sign_in())  # => logged in
 
 wizard1.attack()  # => attacking with power of 50
 archer1.attack()  # => attacking with arrows: arrows left - 100
@@ -212,4 +215,43 @@ my_pets = Pets(my_cats)
 
 #4 Output all of the cats walking using the my_pets instance
 my_pets.walk()
+```
+
+## Dunder Methods
+
+```Python
+class Toy:
+    def __init__(self, color, age):
+        self.color = color
+        self.age = age
+        self.my_dict = {
+            'name': 'Lemon',
+            'has_pets': False
+        }
+
+    # Change Dunder methods
+
+    # def __str__(self):
+    #     return f'{self.color}'
+
+    def __len__(self):
+        return 5
+
+    def __del__(self):
+        return print('deleted!')
+
+    def __call__(self):
+        return 'yes?'
+
+    def __getitem__(self, item):
+        return self.my_dict[item]
+
+
+action_figure = Toy('red', 0)
+print(action_figure.__str__())  # => <__main__.Toy object at 0x000001847AD864C0>
+print(str(action_figure))  # => <__main__.Toy object at 0x000001847AD864C0>
+print(len(action_figure))  # => 5
+#  del action_figure  # => deleted!
+print(action_figure())  # => yes?
+print(action_figure['name'])
 ```
