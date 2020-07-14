@@ -45,3 +45,38 @@ print(list(map(multiply_by2, [1, 2, 3])))  # => [2, 4, 6]
 print(list(map(multiply_by2, [my_list])))  # => [2, 4, 6]
 print(my_list)  # => [1, 2, 3]
 ```
+
+## filter()
+
+```Python
+my_list = [1, 2, 3]
+
+
+def multiply_by2(item):
+    return item*2
+
+
+def only_odd(item):
+    return item % 2 != 0
+
+
+print(list(filter(only_odd, my_list)))  # => [1, 3]
+```
+
+## zip()
+
+```Python
+my_list = [1, 2, 3]
+your_list = [10, 20, 30]
+
+
+def multiply_by2(item):
+    return item*2
+
+
+def only_odd(item):
+    return item % 2 != 0
+
+
+print(list(zip(my_list, your_list)))  # => [1, 3]
+```
