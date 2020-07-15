@@ -160,3 +160,41 @@ the_list = [(4, 3), (0, 2), (9, 9), (10, -1)]
 the_list.sort(key=lambda x: x[1])
 print(the_list)  # => [(10, -1), (0, 2), (4, 3), (9, 9)]
 ```
+
+## List Comprehension
+
+```Python
+my_list = [char for char in 'hello']
+my_list2 = [num for num in range(0, 100)]
+my_list3 = [num*2 for num in range(0, 100)]
+my_list4 = [num**2 for num in range(0, 100) if num % 2 == 0]
+
+print(my_list)  # => ['h', 'e', 'l', 'l', 'o']
+print(my_list2)  # => [0, 1, 2, ..., 99]
+print(my_list3)  # => [0, 2, 4, ..., 198]
+print(my_list4)  # => [0, 4, 16, ..., 9604]
+```
+
+## Set and Dictionary Comprehensions
+
+```Python
+my_list = {char for char in 'hello'}
+my_list2 = {num for num in range(0, 100)}
+my_list3 = {num*2 for num in range(0, 100)}
+my_list4 = {num**2 for num in range(0, 100) if num % 2 == 0}
+
+print(my_list)  # => {'e', 'o', 'h', 'l'}
+print(my_list2)  # => {0, 1, 2, ..., 99}
+print(my_list3)  # => {0, 2, 4, ..., 198}
+print(my_list4)  # => {0, 256, 1024, ..., 7396}
+
+simple_dict = {
+    'a': 1,
+    'b': 2
+}
+my_dict = {key: value**2 for key, value in simple_dict.items()}
+print(my_dict)  # => {'a': 1, 'b': 4}
+
+my_dict2 = {num: num*2 for num in [1, 2, 3]}
+print(my_dict2)  # => {1: 2, 2: 4, 3: 6}
+```
