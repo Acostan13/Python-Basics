@@ -198,3 +198,23 @@ print(my_dict)  # => {'a': 1, 'b': 4}
 my_dict2 = {num: num*2 for num in [1, 2, 3]}
 print(my_dict2)  # => {1: 2, 2: 4, 3: 6}
 ```
+
+## Exercise: Comprehensions
+
+```Python
+some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
+
+duplicates = []
+for value in some_list:
+    if some_list.count(value) > 1:
+        if value not in duplicates:
+            duplicates.append(value)
+
+print(duplicates)  # =>  ['b', 'n']
+
+# Using Comprehension, return an array of duplicate values from the some_list array
+
+duplicates = list(set([value for value in some_list if some_list.count(value) > 1]))
+
+print(duplicates)  # =>  ['n', 'b']
+```
