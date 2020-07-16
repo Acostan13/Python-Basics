@@ -1,4 +1,5 @@
 # Errors in Python
+```Python
 def hoooohoooo()
     pass
 
@@ -33,3 +34,44 @@ def hoooohoooo(num):
 
 
 hoooohoooo(0)  # => ZeroDivisionError: division by zero
+```
+
+## Error Handling
+
+```Python
+while True:
+    try:
+        age = int(input('what is your age? '))
+        10/age
+    except ValueError:
+        print('please enter number')
+    except ValueError:
+        print('!!!!')
+    except ZeroDivisionError:
+        print('please enter an age higher than 0')
+    else:
+        print('thank you!')
+        break
+
+
+def sum1(num1, num2):
+    try:
+        return num1 + num2
+    except TypeError as err:
+        print(f'please enter numbers, {err}')
+
+
+print(sum1('1', 2))  # => please enter numbers, can only concatenate str (not "int") to str
+print(sum1(1, 2))  # => 3
+
+
+def sum2(num1, num2):
+    try:
+        return num1 / num2
+    except (TypeError, ZeroDivisionError) as err:
+        print(err)
+
+
+print(sum2(1, 0))  # => division by zero
+print(sum2(1, '2'))  # => unsupported operand type(s) for /: 'int' and 'str'
+```
