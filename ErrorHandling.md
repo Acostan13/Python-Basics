@@ -45,13 +45,18 @@ while True:
         10/age
     except ValueError:
         print('please enter number')
+        continue
     except ValueError:
         print('!!!!')
     except ZeroDivisionError:
         print('please enter an age higher than 0')
+        break
     else:
         print('thank you!')
         break
+    finally:
+        print('ok, finally done')
+    print('can you hear me?')  # => won't print
 
 
 def sum1(num1, num2):
@@ -74,4 +79,23 @@ def sum2(num1, num2):
 
 print(sum2(1, 0))  # => division by zero
 print(sum2(1, '2'))  # => unsupported operand type(s) for /: 'int' and 'str'
+```
+
+## Raising Errors
+
+```Python
+while True:
+    try:
+        age = int(input('what is your age? '))
+        10/age
+        raise ValueError('hey cut it out')  # purposefully throws error into console
+        raise Exception('stop it already!')
+    except ZeroDivisionError:
+        print('please enter an age higher than 0')
+        break
+    else:
+        print('thank you!')
+        break
+    finally:
+        print('ok, finally done')
 ```
