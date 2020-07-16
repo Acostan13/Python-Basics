@@ -21,6 +21,29 @@ def greet():
 a = hi(greet)
 print(a)  # => still here!, None
 ```
+```Python
+# Decorator Pattern
+def my_decorator(func):
+    def wrap_func(*args, **kwargs):
+        print('*****')
+        func(*args, **kwargs)
+        print('*****')
+    return wrap_func
+
+
+@my_decorator
+def hello(greeting, emoji=':('):
+    print(greeting, emoji)
+
+
+@my_decorator
+def bye(goodbye):
+    print(goodbye)
+
+
+hello('hi', ':)')
+bye('see you later')
+```
 
 ## HOC - Higher Order Functions
 - A function that accepts within its parameters another function
