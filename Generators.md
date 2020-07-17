@@ -37,3 +37,45 @@ print(next(g))  # => 0
 print(next(g))  # => 2
 print(next(g))  # => 4
 ```
+ 
+## Under The Hood Of Generators
+
+```Python
+def special_for(iterable):  # => under the hood of for loops
+    iterator = iter(iterable)
+    while True:
+        try:
+            print(iterator)
+            next(iterator)
+        except StopIteration:
+            break
+
+
+special_for([1, 2, 3])  # => <list_iterator object at 0x00000245F53564C0>
+                        # => <list_iterator object at 0x00000245F53564C0>
+                        # => <list_iterator object at 0x00000245F53564C0>
+                        # => <list_iterator object at 0x00000245F53564C0>
+
+
+class MyGen:
+    current = 0
+
+    def __init__(self, first, last):
+        self.first = first
+        self.last = last
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if MyGen.current < self.last:
+            num = MyGen.current
+            MyGen.current += 1
+            return num
+        raise StopIteration
+
+
+gen = MyGen(0, 100)
+for i in gen:
+    print(i)
+```
